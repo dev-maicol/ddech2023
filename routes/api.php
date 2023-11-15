@@ -17,3 +17,27 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/testear', function () {
+    // return view('welcome');
+    // $respuesta = json_encode({
+    //     'mensaje': 'correcto'
+    // });
+    return response('correcto', 200);
+});
+
+Route::get('/datetimelocal', function () {
+    $datelocal = date("d-m-Y");
+    $timelocal = date("h:i:s");
+
+    $resjson = [
+        'datelocal' => $datelocal,
+        'timelocal' => $timelocal
+    ];
+    
+    $datetimelocal = $datelocal . '|' . $timelocal;
+    
+    // return response('correcto', 200);
+    // return response()->json(json_encode($resjson), 200);
+    return response($datetimelocal, 200);
+});

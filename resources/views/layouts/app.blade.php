@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{{-- <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"> --}}
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
     <meta charset="utf-8" />
@@ -28,7 +29,7 @@
             @include('layouts.page_templates.guest')
         @endguest
         @if (auth()->check())
-        <div class="fixed-plugin">
+        {{-- <div class="fixed-plugin">
           <div class="dropdown show-dropdown">
             <a href="#" data-toggle="dropdown">
               <i class="fa fa-cog fa-2x"> </i>
@@ -83,11 +84,7 @@
                   View Documentation
                 </a>
               </li>
-              <li class="button-container">
-                <a href="https://www.creative-tim.com/product/material-dashboard-pro-laravel" target="_blank" class="btn btn-danger btn-block btn-round">
-                  Upgrade to PRO
-                </a>
-              </li>
+              
               <li class="button-container github-star">
                 <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard-laravel" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
               </li>
@@ -100,7 +97,7 @@
               </li>
             </ul>
           </div>
-        </div>
+        </div> --}}
         @endif
         <!--   Core JS Files   -->
         <script src="{{ asset('material') }}/js/core/jquery.min.js"></script>
@@ -126,9 +123,9 @@
         <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
         <script src="{{ asset('material') }}/js/plugins/jasny-bootstrap.min.js"></script>
         <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-        <script src="{{ asset('material') }}/js/plugins/fullcalendar.min.js"></script>
+        {{-- <script src="{{ asset('material') }}/js/plugins/fullcalendar.min.js"></script> --}}
         <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
-        <script src="{{ asset('material') }}/js/plugins/jquery-jvectormap.js"></script>
+        {{-- <script src="{{ asset('material') }}/js/plugins/jquery-jvectormap.js"></script> --}}
         <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
         <script src="{{ asset('material') }}/js/plugins/nouislider.min.js"></script>
         <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
@@ -136,7 +133,7 @@
         <!-- Library for adding dinamically elements -->
         <script src="{{ asset('material') }}/js/plugins/arrive.min.js"></script>
         <!--  Google Maps Plugin    -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE'"></script>
+        {{-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE'"></script> --}}
         <!-- Chartist JS -->
         <script src="{{ asset('material') }}/js/plugins/chartist.min.js"></script>
         <!--  Notifications Plugin    -->
@@ -144,8 +141,8 @@
         <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
         <script src="{{ asset('material') }}/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
         <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-        <script src="{{ asset('material') }}/demo/demo.js"></script>
-        <script src="{{ asset('material') }}/js/settings.js"></script>
+        {{-- <script src="{{ asset('material') }}/demo/demo.js"></script> --}}
+        {{-- <script src="{{ asset('material') }}/js/settings.js"></script> --}}
         @stack('js')
     </body>
 </html>
