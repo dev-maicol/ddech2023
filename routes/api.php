@@ -41,3 +41,5 @@ Route::get('/datetimelocal', function () {
     // return response()->json(json_encode($resjson), 200);
     return response($datetimelocal, 200);
 });
+
+Route::post('members', 'App\Http\Controllers\MemberController@store')->name('clans.war');

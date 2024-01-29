@@ -1,10 +1,10 @@
-@extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'login', 'title' => __('SICAP-DDECH')])
+@extends('layouts.app', ['class' => 'off-canvas-sidebar', 'activePage' => 'login', 'title' => __('Resistencia ❤ - CoC')])
 
 @section('content')
 <div class="container" style="height: auto; padding-top:0px !important">
   <div class="row align-items-center">
     <div class="col-md-9 ml-auto mr-auto mb-3 text-center">
-      <h3>{{ __('Sistema de Información para el Control de Asistencia del Personal en la ') }} <b>{{ __('Dirección Distrital de Educación Chayanta')}}</b> </h3>
+      <h2><b>{{ __('Clan Resistencia ❤ - Clash of Clans' ) }}</b></h2> <h3>{{ __('Sistema de información para administración de eventos de Clash of Clans')}} </h3>
     </div>
     <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
       <form class="form" method="POST" action="{{ route('login') }}">
@@ -34,7 +34,7 @@
                     <i class="material-icons">email</i>
                   </span>
                 </div>
-                <input type="email" name="email" class="form-control" placeholder="{{ __('Correo o usuario...') }}" value="{{ old('email', 'admin@material.com') }}" required>
+                <input type="email" name="email" class="form-control" placeholder="{{ __('Correo o usuario...') }}" value="{{ old('email', '') }}" required>
               </div>
               @if ($errors->has('email'))
                 <div id="email-error" class="error text-danger pl-3" for="email" style="display: block;">
@@ -49,7 +49,7 @@
                     <i class="material-icons">lock_outline</i>
                   </span>
                 </div>
-                <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Contraseña...') }}" value="{{ !$errors->has('password') ? "secret" : "" }}" required>
+                <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Contraseña...') }}" value="{{ !$errors->has('password') ? "" : "" }}" required>
               </div>
               @if ($errors->has('password'))
                 <div id="password-error" class="error text-danger pl-3" for="password" style="display: block;">

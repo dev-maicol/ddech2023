@@ -6,7 +6,7 @@
   -->
   <div class="logo">
     <a href="{{ route('home')}}" class="simple-text logo-normal">
-      {{ __('SICAP-DDECH') }}
+      {{ __('Resistencia ❤') }}
     </a>
   </div>
   <div class="sidebar-wrapper">
@@ -19,10 +19,17 @@
       </li>
 
       {{-- positions --}}
-      <li class="nav-item{{ $activePage == 'positions' ? ' active' : '' }}">
+      {{-- <li class="nav-item{{ $activePage == 'positions' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('positions.index') }}">
           <i class="material-icons">next_week</i>
             <p>{{ __('Cargos') }}</p>
+        </a>
+      </li> --}}
+      {{-- clans --}}
+      <li class="nav-item{{ $activePage == 'clans' ? ' active' : '' }}">
+        <a class="nav-link" href="{{ route('clans.index') }}">
+          <i class="material-icons">people</i>
+            <p>{{ __('Clanes') }}</p>
         </a>
       </li>
 
