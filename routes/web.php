@@ -2,11 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Models\Clan;
-use App\Models\Controls;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Carbon;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,42 +14,7 @@ use Illuminate\Support\Carbon;
 */
 
 Route::get('/', function () {
-    // return view('auth.login');
-	// $clansTemp = Clan::where('state', 1)->get();
-	$clans = Clan::where('state', 1)->get();
-	$today = Carbon::now()->format('Y-m-d');
-	$totalDay = Controls::where('date', $today)->count();
-	$limit = 50;
-	// dd($clansTemp);
-	// gettype($clansTemp);
-	// dd(gettype($clansTemp));
-	// consultar a la api para traer los members y algunos detalles mas de cada clan
-	// $clansArray = [];
-	// foreach($clansTemp as $clan){
-	// 	$url = "https://cocproxy.royaleapi.dev" . '/v1/clans/%23'.$clan->tag;
-	// 	$headers = [
-    //         'Authorization' => 'Bearer '.env('API_KEY'),
-    //         'Content-Type' => 'application/json',
-    //     ];
-		
-	// 	$response = Http::withHeaders($headers)->get($url);
-	// 	if ($response->successful()) {
-    //         $datos = $response->json();
-	// 		$arrayTemp = [
-	// 			'id' => $clan->id,
-	// 			'tag' => $datos['tag'],
-	// 			'name' => $datos['name'],
-	// 			'members' => $datos['members'],
-	// 			'badge' => $datos['badgeUrls']['small']
-	// 		];
-	// 		$clansArray[$datos['tag']] = $arrayTemp;
-    //     } else {
-    //         $statusCode = $response->status();
-    //         $mensajeError = $response->body();
-    //     }
-	// }
-	// $clans = (object)$clansArray;
-	return view('public.index', compact('clans', 'totalDay', 'limit'));
+    return view('auth.login');
 });
 
 // Auth::routes();
@@ -105,29 +65,3 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('positions', 'App\Http\Controllers\PositionController', ['except' => ['show']]);
 });
-
-// Rutas Clans
-Route::group(['middleware' => 'auth'], function () {
-	Route::resource('clans', 'App\Http\Controllers\ClanController', ['except' => ['show']]);
-
-	Route::get('clans/war/{tag}', 'App\Http\Controllers\ClanController@war')->name('clans.war');
-	Route::get('clans/capital/{tag}/{name}', 'App\Http\Controllers\ClanController@capital')->name('clans.capital');
-
-	
-});
-
-// Rutas Members
-Route::group(['middleware' => 'auth'], function () {
-	Route::resource('members', 'App\Http\Controllers\ClanController', ['except' => ['show']]);
-
-	// Route::get('members/war/{tag}', 'App\Http\Controllers\ClanController@war')->name('members.war');
-	// Route::get('members/capital/{tag}/{name}', 'App\Http\Controllers\ClanController@capital')->name('members.capital');
-
-	
-});
-
-Route::post('clans/capital/information', 'App\Http\Controllers\ClanController@capitalPublic')->name('clans.capitalPublic');
-Route::post('clans/cwl/information', 'App\Http\Controllers\ClanController@cwlPublic')->name('clans.cwlPublic');
-Route::post('clans/war/information', 'App\Http\Controllers\ClanController@warPublic')->name('clans.warPublic');
-
-Route::resource('controls', 'App\Http\Controllers\ControlController', ['except' => ['show']]);

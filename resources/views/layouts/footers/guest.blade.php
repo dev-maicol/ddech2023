@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="container">
-        {{-- <nav class="float-left">
+        <nav class="float-left">
         <ul>
             <li>
             <a href="https://www.creative-tim.com">
@@ -23,13 +23,13 @@
             </a>
             </li>
         </ul>
-        </nav> --}}
+        </nav>
         <div class="copyright float-right">
         &copy;
         <script>
             document.write(new Date().getFullYear())
-        </script>, developed by <i class="material-icons">code</i><b><i> Ing. Maicol German Condori Adrian </i></b><i class="material-icons">code</i>
-        {{-- <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> and <a href="https://www.updivision.com" target="_blank">UPDIVISION</a> for a better web. --}}
+        </script>, made with <i class="material-icons">favorite</i> by
+        <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> and <a href="https://www.updivision.com" target="_blank">UPDIVISION</a> for a better web.
         </div>
     </div>
 </footer>
